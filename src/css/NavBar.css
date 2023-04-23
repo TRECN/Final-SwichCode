@@ -1,0 +1,84 @@
+.Logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 47, 103);
+    padding-right:10px ;
+}
+
+.logo{
+
+    color: #fff;
+    margin:5px;
+    cursor: pointer;
+   
+}
+
+.switch{
+    display: flex;
+    justify-content: center;
+}
+
+.untitled{
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(53, 49, 49);
+}
+
+.leftHalf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.untitled{
+    margin-left: 10px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rightHalf{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.theme{
+    padding: 10px;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+
+}
+.theme:hover,.save:hover,.signIn:hover,.SignUp:hover{
+    transition: 0.3s all ease-in;
+    cursor: pointer;
+}
+.save,.signIn,.SignUp{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform:uppercase;
+    padding: 10px;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    background-color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+
+

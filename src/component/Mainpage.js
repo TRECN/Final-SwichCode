@@ -1,5 +1,5 @@
 import React from 'react'
-import './mainpage.css' ;
+import '../css/mainpage.css' ;
 
 export default function Select(props) {
   return (
