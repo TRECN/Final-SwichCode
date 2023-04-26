@@ -34,7 +34,7 @@ const Editor = ({ theme, language, value, setEditorState }) => {
       <ControlledEditorComponent
         onBeforeChange={handleChange}
         value={value}
-        className="code-mirror-wrapper"
+        className="codeMirror"
         options={{
           lineWrapping: true,
           lint: true,

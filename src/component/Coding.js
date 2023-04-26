@@ -3,6 +3,7 @@ import CodeEditor from './components/CodeEditor'
 import "../css/Coding.css"
 import NavBar from './NavBar'
 import axios from 'axios'
+import Output from './components/Output'
 
 
 export default function Coding() {
@@ -11,6 +12,8 @@ export default function Coding() {
   const [theme, setTheme] = useState('vs-dark')
   const themeArray = ['vs-dark', 'oceanic-next']
   const [fSize,setFsize]=useState(15)
+  const [output,setOutput]=useState();
+  const [color,setcolor]=useState("blue")
 
   const lang = {
     'JAVA': 'java',
@@ -35,7 +38,7 @@ export default function Coding() {
   const [language, setLanguage] = useState('java');
 
   const handleCompile = () => {
-
+    console.log("run")
     const formData = {
       language_id: langId,
       // encode source code in base64
@@ -82,14 +85,22 @@ export default function Coding() {
       let statusId = response.data.status?.id;
       console.log(response.data)
       if (statusId === 1 || statusId === 2) {
-        // still processing
+        //still processing
         setTimeout(() => {
           checkStatus(token)
-        }, 2000)
-        return
+        }, 2000)           
+        return             
       } else {
-        console.log('response.data', atob(response.data.stdout))
+        console.log('response.data', response.data.stdout)
+        
         console.log(atob (response.data.compile_output))
+        if(response.data.stdout===null){
+          setOutput(atob(response.data.compile_output))
+          setcolor("red")
+        }
+        else{
+          setOutput(atob(response.data.stdout))
+        }
         return
       }
     } catch (err) {
@@ -103,7 +114,7 @@ export default function Coding() {
         theme={theme}
         setTheme={setTheme}
         themeArray={themeArray}
-      />
+        />
       <div className="bod">
         <div className="LeftH">
           <CodeEditor
@@ -131,8 +142,17 @@ export default function Coding() {
             setFsize(e.target.value)
             console.log(e.target.value)
           }}/>
+          <div className="output-input">
+            <Output output={output} color={color}/>
+          </div>
         </div>
       </div>
     </div>
   )
 }
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     cout<<10;
+// }
