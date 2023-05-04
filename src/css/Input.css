@@ -1,0 +1,13 @@
+.Input{
+    color: white;
+    border: 1px rgb(125, 125, 125) solid;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+
+}
+
+.input-w{
+    width: 100%;
+    font-size: 20px;
+}

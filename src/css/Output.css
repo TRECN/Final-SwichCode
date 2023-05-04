@@ -9,8 +9,8 @@
     width: 20%;
     height: 30vh;
     padding:10px;
+    font-size: 30px;
 }
 .out-pre{
     overflow:auto;
-
 }

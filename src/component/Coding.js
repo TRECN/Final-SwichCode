@@ -4,6 +4,7 @@ import "../css/Coding.css"
 import NavBar from './NavBar'
 import axios from 'axios'
 import Output from './components/Output'
+import Input from './components/Input'
 
 
 export default function Coding() {
@@ -13,7 +14,8 @@ export default function Coding() {
   const themeArray = ['vs-dark', 'oceanic-next']
   const [fSize,setFsize]=useState(15)
   const [output,setOutput]=useState();
-  const [color,setcolor]=useState("blue")
+  const [color,setcolor]=useState("green")
+  const [input,setInput]=useState()
 
   const lang = {
     'JAVA': 'java',
@@ -39,11 +41,13 @@ export default function Coding() {
 
   const handleCompile = () => {
     console.log("run")
+    console.log(code)
+    console.log(input)
     const formData = {
       language_id: langId,
       // encode source code in base64
       source_code: btoa(code),
-      stdin:btoa("1\n2")
+      stdin:btoa(input)
     };
     const options = {
       method: "POST",
@@ -88,7 +92,7 @@ export default function Coding() {
         //still processing
         setTimeout(() => {
           checkStatus(token)
-        }, 2000)           
+        }, 100)           
         return             
       } else {
         console.log('response.data', response.data.stdout)
@@ -100,6 +104,7 @@ export default function Coding() {
         }
         else{
           setOutput(atob(response.data.stdout))
+          setcolor("green")
         }
         return
       }
@@ -144,6 +149,7 @@ export default function Coding() {
           }}/>
           <div className="output-input">
             <Output output={output} color={color}/>
+            <Input input={input} setInput={setInput}/>
           </div>
         </div>
       </div>
