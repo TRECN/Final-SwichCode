@@ -1,0 +1,30 @@
+.codeEditor{
+    padding: 10px;
+}
+.CodeBg{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: black;
+}
+.bod{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.LeftH{
+    width: 60%;
+    height: 100vh;
+}
+.RightH{
+    width: 40%;
+    padding: 40px;
+}
+
+.language{
+    background-color: rgb(53, 49, 49);
+    border: none;
+    color: white;
+    padding: 10px 5px;
+    font-size: 20px;
+}

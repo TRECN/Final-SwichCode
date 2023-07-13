@@ -1,0 +1,115 @@
+.Logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 47, 103);
+    padding-right:10px ;
+}
+.logo-name {
+    text-decoration: none;
+    color: white;
+    padding-left: 10px;
+    letter-spacing: 5px;
+    font-family: "Noto Serif", serif;
+    font-family: "Play", sans-serif;
+    font-size: 20px;
+    
+    text-transform: uppercase;
+    background-image: linear-gradient(
+      -225deg,
+      #231557 5%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 10s linear infinite;
+    display: inline-block;
+  }
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
+.logo{
+
+    color: #fff;
+    margin:5px;
+    cursor: pointer;
+   
+}
+
+.switch{
+    display: flex;
+    justify-content: center;
+}
+
+.untitled{
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.leftHalf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.untitled{
+    margin-left: 10px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rightHalf{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.theme{
+    padding: 10px;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+
+}
+.theme:hover,.save:hover,.signIn:hover,.SignUp:hover{
+    transition: 0.3s all ease-in;
+    cursor: pointer;
+}
+.save,.signIn,.SignUp{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform:uppercase;
+    padding: 10px;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    background-color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+

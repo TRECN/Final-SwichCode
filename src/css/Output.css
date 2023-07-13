@@ -1,0 +1,16 @@
+.Output{
+    color: white;
+    border: 1px rgb(125, 125, 125) solid;
+    display: flex;
+    flex-direction: column;
+
+}
+.Output-w{
+    width: 20%;
+    height: 30vh;
+    padding:10px;
+    font-size: 20px;
+}
+.out-pre{
+    overflow:auto;
+}

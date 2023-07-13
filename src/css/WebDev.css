@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.page{
+    background-color: black;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.editor{
+    width: 100%;
+    flex-grow: 0 ;
+    padding: 10px;
+}
+
+.bottom{
+    flex-basis: 50%;
+    height: 100vh;
+}
+
+.bottom iframe{
+    background-color: #fff;
+    width: 100%;
+    height: 50vh;
+    border: 0;
+    outline: 0;
+
+}
+
+
+label{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    background-color: rgb(53, 49, 49);
+    width: 100%;
+    padding: 10px;
+}
+label h3{
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    margin:0 5px;
+}
