@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import CodeEditor from './components/CodeEditor'
 import "../css/Coding.css"
-import NavBar from './NavBar'
+import NavBar from './NavBar2'
 import axios from 'axios'
 import Output from './components/Output'
 import Input from './components/Input'
 
 
-export default function Coding() {
-
+export default function Coding({setDisplayNav}) {
+  setDisplayNav(false)
   const [code, setCode] = useState('')
   const [theme, setTheme] = useState('vs-dark')
   const themeArray = ['vs-dark', 'oceanic-next']
@@ -51,13 +51,13 @@ export default function Coding() {
     };
     const options = {
       method: "POST",
-      url: process.env.REACT_APP_RAPID_API_URL,
+      url: 'https://judge0-ce.p.rapidapi.com/submissions',
       params: { base64_encoded: "true", fields: "*" },
       headers: {
         "content-type": "application/json",
         "Content-Type": "application/json",
-        "X-RapidAPI-Host": process.env.REACT_APP_RAPID_API_HOST,
-        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+        "X-RapidAPI-Host": 'judge0-ce.p.rapidapi.com',
+        "X-RapidAPI-Key": 'd1f4847b2emshd6d521e8d281344p16880bjsn6fdfdaeaddbc',
       },
       data: formData,
     };
@@ -77,11 +77,11 @@ export default function Coding() {
   const checkStatus = async (token) => {
     const options = {
       method: "GET",
-      url: process.env.REACT_APP_RAPID_API_URL + "/" + token,
+      url: 'https://judge0-ce.p.rapidapi.com/submissions' + "/" + token,
       params: { base64_encoded: "true", fields: "*" },
       headers: {
-        "X-RapidAPI-Host": process.env.REACT_APP_RAPID_API_HOST,
-        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+        "X-RapidAPI-Host": 'judge0-ce.p.rapidapi.com',
+        "X-RapidAPI-Key": 'd1f4847b2emshd6d521e8d281344p16880bjsn6fdfdaeaddbc',
       },
     };
     try {

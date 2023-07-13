@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import '../css/WebDev.css'
 import { BsPlayCircleFill } from "react-icons/bs"
 import Editor from './components/Editor';
-import NavBar from './NavBar';
+import NavBar from './NavBar2';
 
-export default function WebDev() {
+export default function WebDev({setDisplayNav}) {
+  setDisplayNav(false)
   const [html, setHtml] = useState('')
   const [css, setCss] = useState('')
   const [js, setJs] = useState('')

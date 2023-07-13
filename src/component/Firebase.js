@@ -2,14 +2,11 @@
 import { initializeApp } from "firebase/app";
 
 import {
-  
   FacebookAuthProvider,
   getAuth,
   GithubAuthProvider,
-  signInWithRedirect,
+  signInWithPopup,
   GoogleAuthProvider,
-  
-
 } from "firebase/auth";
 
 const firebaseConfig = {
@@ -23,32 +20,33 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
- const auth = getAuth();
- export {app,auth};
+const auth = getAuth();
+export { app, auth };
 
 const provider1 = new GoogleAuthProvider();
 const provider2 = new FacebookAuthProvider();
 const provider3 = new GithubAuthProvider();
 
 export const signInWithGoogle = () => {
-  signInWithRedirect(auth, provider1).then((result) => {
-    const name1 = result.user.displayName;
-    const email1 = result.user.email;
-    const profilePic1 = result.user.photoURL;
+  signInWithPopup(auth, provider1)
+    .then((result) => {
+      const name1 = result.user.displayName;
+      const email1 = result.user.email;
+      const profilePic1 = result.user.photoURL;
 
-    localStorage.setItem("name", name1);
-    localStorage.setItem("email", email1);
-    localStorage.setItem("profilePic", profilePic1);
-  });
-  try {
-  } catch (error) {
-    console.log(error);
-  }
+      localStorage.setItem("name", name1);
+      localStorage.setItem("email", email1);
+      localStorage.setItem("profilePic", profilePic1);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
-export const signInWithFacebook = () => {
-  signInWithRedirect(auth, provider2).then((result) => {
+const signInWithFacebook = () => {
+  signInWithPopup(auth, provider2).then((result) => {
     const name2 = result.user.displayName;
     const email2 = result.user.email;
     const profilePic2 = result.user.photoURL;
@@ -63,8 +61,9 @@ export const signInWithFacebook = () => {
     console.log(error);
   }
 };
-export const signInWithGithub = () => {
-  signInWithRedirect(auth, provider3).then((result) => {
+
+const signInWithGithub = () => {
+  signInWithPopup(auth, provider3).then((result) => {
     const name3 = result.user.displayName;
     const email3 = result.user.email;
     const profilePic3 = result.user.photoURL;
@@ -80,6 +79,4 @@ export const signInWithGithub = () => {
   }
 };
 
-
-
- 
+export { signInWithFacebook, signInWithGithub };
